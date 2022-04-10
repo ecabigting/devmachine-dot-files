@@ -56,3 +56,47 @@ Check `nvm` version
 nvm --version
 ```
 
+## Configuring Arch Linux in VMware Player
+
+### Missing screen resolution
+
+If you cannot find the correct screen resolution on your guest Arch Linux using VMware, run the following steps.
+
+Install `open-vm-tools`
+
+```bash
+sudo pacman open-vm-tools
+```
+
+Lets add the missing resolution:
+
+Run the following command to get the resolution you want
+```bash
+cvt 2560 1080 60
+```
+The command above will show the screen resolution of `2560` by `1080` on `60hz`
+
+You should get something like this
+```bash
+Modeline "2560x1080_60.00"  230.00  2560 2720 2992 3424  1080 1083 1093 1120 -hsync +vsync
+```
+
+Now run the following command to add a new mode
+```bash
+xrandr --newmode "2560x1080_60.00"  230.00  2560 2720 2992 3424  1080 1083 1093 1120 -hsync +vsync
+```
+
+Now we need to add the new mode to `xrandr` using the following command
+```bash
+xrandr --addmode Virtual1 2560x1080_60.00
+```
+Where `Virtual1` is your monitor and `2560x1080` is the screen mode you want to use
+
+Last step is to add the following modules to `mkinicpio.conf`
+
+Edit `/etc/mkinitcpio.conf` and replace `MODULES=""` with
+```bash
+MODULES=(vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmgfx)
+```
+
+Restart your machine and you should get the resolution, you set, `PRO TIP: force VMware to fullscreen`
