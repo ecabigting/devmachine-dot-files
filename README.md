@@ -100,3 +100,27 @@ MODULES=(vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmgfx)
 ```
 
 Restart your machine and you should get the resolution, you set, `PRO TIP: force VMware to fullscreen`
+
+### Enabling Shared folders 
+
+Adding shared folder from `Host` to be accessible in the `guest` machine. 
+
+- Make sure from VMware player under __Settings -> Options -> Shared folder__. Select the folder you want to share with the guest machine.
+
+- Create a folder in your `Guest`. For example `/home/stifmiester/Shared`
+
+- Mount the folder from `Host` to the folder your created in your `Guest`
+```bash
+/usr/bin/vmhgs-fuse -o auto_unmount,allow_other .host/ /home/stifmiester/Shared
+```
+
+- Next is to update your `/etc/fstab`
+```bash
+sudo nano /etc/fstab
+```
+
+Add the the following code to the end of the file
+```bash
+.host/ /home/stifmiester/Shared fuse.vmhgfs-fuse defaults,allow_other 0 0
+```
+
