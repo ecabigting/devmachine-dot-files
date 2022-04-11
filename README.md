@@ -111,7 +111,7 @@ Adding shared folder from `Host` to be accessible in the `guest` machine.
 
 - Mount the folder from `Host` to the folder your created in your `Guest`
 ```bash
-/usr/bin/vmhgs-fuse -o auto_unmount,allow_other .host/ /home/stifmiester/Shared
+/usr/bin/vmhgs-fuse -o auto_unmount,allow_other .host:/ /home/stifmiester/Shared
 ```
 
 - Next is to update your `/etc/fstab`
@@ -121,6 +121,6 @@ sudo nano /etc/fstab
 
 Add the the following code to the end of the file
 ```bash
-.host/ /home/stifmiester/Shared fuse.vmhgfs-fuse defaults,allow_other 0 0
+.host:/ /home/stifmiester/Shared fuse.vmhgfs-fuse defaults,allow_other 0 0
 ```
 
