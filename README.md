@@ -8,7 +8,7 @@
  - Open `~/.Xresources` and change the font for **xterm** to this: `XTerm*faceName:          MesloLGS NF`
  - Open `vscode` and set the terminal font by opening _Settings ->_ **search: terminal font** and set the value to `MesloLGL Nerd Font`
 
-# Installing `dotnet`
+# Installing `dotnet` on `linux`
 
 - Download `dotnet-install.sh` from [here](https://dot.net/v1/dotnet-install.sh)
 - Run the following command:
@@ -20,6 +20,14 @@ bash ./dotnet-install.sh --install-dir /usr/share/dotnet -channel Current -versi
 ```bash
 export PATH="$PATH:/usr/share/dotnet"
 ```
+
+- You need to add a symbolic for dotnet, run the following command to do so:
+
+```bash
+sudo ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
+```
+Where `/usr/share/dotnet/` in the command is the path and the additional `dotnet` is the `executable`
+
 
 # Installing `npm`
 
