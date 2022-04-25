@@ -132,3 +132,20 @@ Add the the following code to the end of the file
 .host:/ /home/stifmiester/Shared fuse.vmhgfs-fuse defaults,allow_other 0 0
 ```
 
+### Change Background Image in Login Screen in EndeavourOS
+
+`Note: This is for users using lightdm-gtk-greeter`
+
+Run the following code to edit the config for `lightdm`
+
+```bash
+sudo nano /etc/lightdm/slick-greeter.conf
+```
+
+Edit the value for `background`
+
+Make sure the file path is sufficient permision for the greeter to read. Here is my example:
+
+`background=/usr/share/endeavouros/backgrounds/fiery-rick.png`
+
+So basically, I copied my `lockscreen.png` wallpaper to the patch that is already being used by endeavouros for backgrounds.
