@@ -149,3 +149,6 @@ Make sure the file path is sufficient permision for the greeter to read. Here is
 `background=/usr/share/endeavouros/backgrounds/fiery-rick.png`
 
 So basically, I copied my `lockscreen.png` wallpaper to the patch that is already being used by endeavouros for backgrounds.
+
+#### Bonus: Removing the dotted grid in the Login Screen
+set `draw-grid` to `false`
