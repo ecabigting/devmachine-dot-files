@@ -152,3 +152,22 @@ So basically, I copied my `lockscreen.png` wallpaper to the patch that is alread
 
 #### Bonus: Removing the dotted grid in the Login Screen
 set `draw-grid` to `false`
+
+### Hiding the `select boot` screen on `EndeavourOS`
+Run the following command
+```bash
+sudo nano /etc/default/grub
+```
+Look for: `GRUB_TIMEOUT=5` and set it to `0`
+Then run the following command to `remake` the config
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## How to fix gitub error related to : `The name org.freedesktop.secrets was not provided by any .service files`
+
+Run the following command:
+
+```bash
+sudo pacman -S gnome-keyring libsecret
+```
