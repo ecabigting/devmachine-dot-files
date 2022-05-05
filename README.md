@@ -15,7 +15,7 @@
 ```bash
 bash ./dotnet-install.sh --install-dir /usr/share/dotnet -channel Current -version latest
 ```
-- Add the it to the PATH of your shell, for `zsh` open `~/.zshrc` and add the following line:
+- Add the it to the PATH of your shell, for `zsh` open `~/.zshrc`, for `bash` open `~/.bashrc` and add the following line:
 
 ```bash
 export PATH="$PATH:/usr/share/dotnet"
