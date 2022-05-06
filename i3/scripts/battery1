@@ -32,7 +32,11 @@ my $short_text;
 my $label = '😅';
 my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
 
-open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_BAT$bat_number | grep 'percentage' |") or die;
+#
+# Orinal code below this line
+# open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_BAT$bat_number | grep 'percentage' |") or die;
+# Fix for LG Gram 15 15Z95N
+open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_CMB0 | grep 'percentage' |") or die;
 $upower = <UPOWER>;
 close(UPOWER);
 
@@ -44,7 +48,11 @@ if ($upower !~ /:          (\d+)%/) {
 $percent = $1;
 $full_text = "$percent%";
 
-open (BAT_STATE, "upower -i /org/freedesktop/UPower/devices/battery_BAT$bat_number | grep 'state' |") or die;
+# 
+# Orinal code below this line
+# open (BAT_STATE, "upower -i /org/freedesktop/UPower/devices/battery_BAT$bat_number | grep 'state' |") or die;
+# Fix for LG Gram 15 15Z95N
+open (BAT_STATE, "upower -i /org/freedesktop/UPower/devices/battery_CMB0 | grep 'state' |") or die;
 $bat_state = <BAT_STATE>;
 close(BAT_STATE);
 
