@@ -171,3 +171,22 @@ Run the following command:
 ```bash
 sudo pacman -S gnome-keyring libsecret
 ```
+
+## Check battery status of laptop
+Lets first check the devices using `upower` with:
+```bash
+upower -e
+```
+
+Then:
+
+```bash
+upower -i /org/freedesktop/UPower/devices/battery_CMB0
+```
+
+Where `battery_CMB0` is your battery
+
+## Get full hardware info:
+```bash
+inxi -Fxz
+```
