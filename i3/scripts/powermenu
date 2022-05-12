@@ -117,9 +117,9 @@ menu=(
   [ Shutdown]="systemctl poweroff"
   [ Reboot]="systemctl reboot"
   [ Suspend]="systemctl suspend"
-  [ Hibernate]="systemctl hibernate"
+  [ Hibernate]="systemctl hibernate"  
   #[ Lock]="~/.config/i3/scripts/blur-lock"
-  [ Lock]="i3lock -i ~/.config/i3/fiery-rick.png -p win -c 000000"
+  [ Lock]="i3lock -i ~/.config/i3/fiery-rick.png -p win -c 000000"
   [ Logout]="i3-msg exit"
   [ Cancel]=""
 )
