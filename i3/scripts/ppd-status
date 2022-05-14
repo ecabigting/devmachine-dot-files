@@ -7,10 +7,12 @@ current_profile=$(/usr/bin/powerprofilesctl get)
 #echo "$current_profile"
 if [$current_profile == 'performance']
 then
-    echo ""
+    echo 
 elif [$current_profile == 'balance']
 then
-    echo ""
+    echo 
 else
-    echo ""
+    echo 
 fi
+
+
