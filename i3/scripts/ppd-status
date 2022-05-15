@@ -5,14 +5,14 @@
 
 current_profile=$(/usr/bin/powerprofilesctl get)
 #echo "$current_profile"
-if [$current_profile == 'performance']
-then
-    echo 
-elif [$current_profile == 'balance']
-then
-    echo 
-else
-    echo 
-fi
+ if [ "$current_profile" == "performance" ]
+ then
+     echo "<span font='FontAwesome' color='yellow'></span>"
+ elif [ "$current_profile" == "balanced" ]
+ then
+     echo "<span font='FontAwesome' color='white'></span>"
+ else
+     echo "<span font='FontAwesome' color='green'></span>"
+ fi
 
 
