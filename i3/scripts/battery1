@@ -62,9 +62,9 @@ if ($bat_state !~ /:               (\w+)/) {
 $status = $1;
 
 if ($status eq 'discharging') {
-	$full_text .= ' ';
+	$full_text .= ' ';
 } elsif ($status eq 'charging') {
-	$full_text .= ' ';
+	$full_text .= ' ';
 } elsif ($status eq 'Unknown') {
 	open (AC_ADAPTER, "acpi -a |") or die;
 	$ac_adapt = <AC_ADAPTER>;
@@ -110,7 +110,7 @@ if ($status eq 'discharging') {
 		print "#FFAE00\n";
 	} elsif ($percent < 60) {
 		print "#FFF600\n";
-	} elsif ($percent < 85) {
+	} elsif ($percent < 100) {
 		print "#A8FF00\n";
 	}
 
