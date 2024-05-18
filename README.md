@@ -279,3 +279,25 @@ Where `battery_CMB0` is your battery
 ```bash
 inxi -Fxz
 ```
+
+## Using i3lock-color rather than the default installed i3lock
+
+### `IMPORTANT!!`
+
+Uninstall `i3lock` first as it will conflict with `i3lock-color`
+
+```bash
+sudo pacman -R i3lock
+```
+
+Install `i3lock-color`
+
+```bash
+yay i3lock-color
+```
+
+OPTIONAL: if you a have not yet set for the `lock` config under `~/.config/i3/scripts/` execute the following to run
+
+```bash
+sudo chmod +x ~/.config/i3/scripts/lock
+```
